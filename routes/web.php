@@ -15,14 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users', 'UserController@index');
-Route::get('/users/create', 'UserController@create');
-Route::get('/users/{user}', 'UserController@show');
-Route::post('/users', 'UserController@store');
-Route::get('/users/{user}/edit', 'UserController@edit');
-Route::patch('/users/{user}', 'UserController@update');
-Route::delete('/users/{user}', 'UserController@delete');
-
-Route::resource('todos', 'TodoController');
-
 

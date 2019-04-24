@@ -30,3 +30,9 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
+
+Route::get('/user', 'UserController@index');
+Route::get('/user/{user}', 'UserController@show');
+Route::post('/user', 'UserController@store');
+Route::patch('/user/{user}', 'UserController@update');
+Route::delete('/user/{user}', 'UserController@destroy');
