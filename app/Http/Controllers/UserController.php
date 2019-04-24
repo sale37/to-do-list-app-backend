@@ -15,8 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return $users;
+        return User::all();
     }
 
     /**
@@ -54,9 +53,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        $user = User::find($id);
         return $user;
     }
 
@@ -78,10 +76,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(User $user)
     {
-        $user = User::find($id);
-
         $user->update(request(['name', 'email', 'password']));
 
         return $user;
@@ -95,8 +91,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-
-        $user->delete();
+        return User::destroy($id);
     }
 }
