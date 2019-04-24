@@ -23,4 +23,6 @@ Route::get('/users/{user}/edit', 'UserController@edit');
 Route::patch('/users/{user}', 'UserController@update');
 Route::delete('/users/{user}', 'UserController@delete');
 
+Route::resource('todos', 'TodoController');
+
 
