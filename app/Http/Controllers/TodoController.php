@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TodoStoreRequest;
 use App\Todo;
-use Illuminate\Support\Facades\Input;
 
 class TodoController extends Controller
 {
@@ -85,7 +84,7 @@ class TodoController extends Controller
 
         $todo = $user->todos->find($id);
 
-        $todo->description = Input::get('description');
+        $todo->update($request->all());
 
         $todo->save();
 
