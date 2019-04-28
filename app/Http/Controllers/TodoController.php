@@ -102,5 +102,7 @@ class TodoController extends Controller
         $user = auth()->user();
 
         $user->todos->find($id)->delete();
+
+        return $user;
     }
 }
