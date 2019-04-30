@@ -31,6 +31,8 @@ Route::group([
 
 });
 
+Route::resource('todos', 'TodoController');
+
 Route::get('/user', 'UserController@index');
 Route::get('/user/{user}', 'UserController@show');
 Route::post('/user', 'UserController@store');
